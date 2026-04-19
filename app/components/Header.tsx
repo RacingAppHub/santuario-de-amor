@@ -51,7 +51,7 @@ export default function Header() {
         </div>
 
         <div className="text-center">
-            <h1 className={`${cinzel.className} text-3xl md:text-4xl font-bold text-white`}>
+            <h1 className={`${cinzel.className} text-2xl md:text-3xl font-bold text-white`}>
                 <Link href="/" className="[text-shadow:0_0_15px_rgba(236,72,153,0.9),0_0_5px_rgba(236,72,153,0.7)]">Santuario de Amor</Link>
             </h1>
         </div>

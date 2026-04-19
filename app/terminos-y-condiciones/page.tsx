@@ -5,16 +5,6 @@ import { ArrowLeft } from 'lucide-react';
 export default function TerminosYCondiciones() {
   return (
     <div className="text-gray-200 min-h-screen">
-      <header className="bg-black/30 backdrop-blur-lg shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-pink-400 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Santuario de Amor</Link>
-          <Link href="/" className="flex items-center text-pink-300 hover:text-pink-400">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver al Inicio
-          </Link>
-        </div>
-      </header>
-
       <main className="container mx-auto px-6 py-12">
         <article className="max-w-4xl mx-auto border border-white/10 rounded-xl p-8 md:p-12">
           <h1 className="text-3xl md:text-4xl font-extrabold text-pink-300 mb-8">Términos y Condiciones del Servicio</h1>
