@@ -20,7 +20,7 @@ export default function ServicioPage({ params }: ServicioPageProps) {
   const { slug } = params;
   const servicio = serviciosData.find((s) => s.slug === slug);
   const [isModalOpen, setModalOpen] = useState(false);
-  const phoneNumber = "19516489947";
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '19516489947';
 
   if (!servicio) {
     notFound();

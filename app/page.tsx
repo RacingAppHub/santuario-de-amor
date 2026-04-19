@@ -9,7 +9,7 @@ import WhatsappIcon from './components/WhatsappIcon';
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const phoneNumber = "19516489947";
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '19516489947';
 
   return (
     <div className="text-gray-200">
