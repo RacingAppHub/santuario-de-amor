@@ -1,0 +1,91 @@
+[debug] [2026-04-19T00:23:27.945Z] ----------------------------------------------------------------------
+[debug] [2026-04-19T00:23:27.948Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/gm9mcvzb17vv8cla08khrg29vxn3sq4r-firebase-tools-15.1.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only hosting
+[debug] [2026-04-19T00:23:27.949Z] CLI Version:   15.1.0
+[debug] [2026-04-19T00:23:27.949Z] Platform:      linux
+[debug] [2026-04-19T00:23:27.949Z] Node Version:  v20.19.1
+[debug] [2026-04-19T00:23:27.949Z] Time:          Sun Apr 19 2026 00:23:27 GMT+0000 (Coordinated Universal Time)
+[debug] [2026-04-19T00:23:27.950Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-19T00:23:36.652Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:36.653Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:36.663Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/web-maestro-53772262 [none]
+[debug] [2026-04-19T00:23:37.267Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/web-maestro-53772262 200
+[debug] [2026-04-19T00:23:37.268Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/web-maestro-53772262 {"workspaceId":"web-maestro-53772262","name":"web maestro","workspaceRedirectUrl":"firebase-web-maestro-1776194521982.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2026-04-18T23:05:44.514882Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7070334965640153949@monospace-per-ws-sa-4.iam.gserviceaccount.com","enableNix":true,"ownerEmail":"alvarez.894@gmail.com","workspaceImageUrl":"https://www.gstatic.com/monospace/231115/logo_nextjs.svg","templateArgs":"{\"language\":\"js\",\"srcDir\":true,\"eslint\":true,\"app\":true,\"tailwind\":true,\"__agentic_workspace\":true}","templateRepoUrl":"file:///usr/local/monospace/templates/public/nextjs","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2Utd2ViLW1hZXN0cm8tMTc3NjE5NDUyMTk4Mi5jbHVzdGVyLXpodzN3MzdyeHpna3V0dXNiYmhpYjZxaHJhLmNsb3Vkd29ya3N0YXRpb25zLmRldiIsImlhdCI6MTc3NjU1ODIxNywiZXhwIjoxNzc2NjQ0NjE3fQ.Z-PhMPd8uJTNubFQGE-XQyocG5tQhSJt28QfxAdvpJRxjPDNfAirnG78_jzgooX41iqj_OHM96yMFEjCaqdiIqyPQtKa9RlpYb-VkgVISxlNyymhTFXuHR1_0TB0rvvXPNKF1Az-8TBrr5eWBSR0SbMsX4L7JhlrNkint3kbF9jVqnvoboaBFpSFWEBVRtrhxlpddip0pvi-ERNcdO0U3i8987TDjn3SN3ArMwC_ct0SAmeNwIjcw4syxfMHgpxFbXzJNpRQf16pr7r8enZMxmb8CwaPEP1M6D3pfP3z4YDmfjiJdvTcM_sjAXavxSq61dgCM5jD-ebUZowlroYxJA","firebaseProjectId":"energiadeamor-site"}
+[debug] [2026-04-19T00:23:37.271Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-04-19T00:23:37.272Z] > authorizing via signed-in user (alvarez.894@gmail.com)
+[debug] [2026-04-19T00:23:37.272Z] [iam] checking project energiadeamor-site for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-04-19T00:23:37.273Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:37.273Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:37.273Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/energiadeamor-site:testIamPermissions [none]
+[debug] [2026-04-19T00:23:37.273Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/energiadeamor-site:testIamPermissions x-goog-quota-user=projects/energiadeamor-site
+[debug] [2026-04-19T00:23:37.273Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/energiadeamor-site:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-19T00:23:37.332Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/energiadeamor-site:testIamPermissions 200
+[debug] [2026-04-19T00:23:37.332Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/energiadeamor-site:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-04-19T00:23:37.335Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:37.335Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:37.337Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/energiadeamor-site [none]
+[debug] [2026-04-19T00:23:37.600Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/energiadeamor-site 200
+[debug] [2026-04-19T00:23:37.600Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/energiadeamor-site {"projectId":"energiadeamor-site","projectNumber":"930521099876","displayName":"Santuario de Amor","name":"projects/energiadeamor-site","resources":{"hostingSite":"energiadeamor-site"},"state":"ACTIVE","etag":"1_39439fd2-5818-403d-99fc-43d3fe4e0f4c"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2026-04-19T00:23:52.065Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:52.065Z] Checked if tokens are valid: true, expires at: 1776561615461
+[debug] [2026-04-19T00:23:52.066Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/energiadeamor-site/sites/energiadeamor-site [none]
+[debug] [2026-04-19T00:23:52.414Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/energiadeamor-site/sites/energiadeamor-site 200
+[debug] [2026-04-19T00:23:52.414Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/energiadeamor-site/sites/energiadeamor-site {"name":"projects/energiadeamor-site/sites/energiadeamor-site","defaultUrl":"https://energiadeamor-site.web.app","type":"DEFAULT_SITE"}
+[info]   ▲ Next.js 14.2.35
+
+[info] 
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/6) ...
+
+[info]    Generating static pages (1/6) 
+   Generating static pages (2/6) 
+
+[info]    Generating static pages (4/6) 
+
+[info]  ✓ Generating static pages (6/6)
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (app)                              Size     First Load JS
+┌ ○ /                                    4.27 kB         100 kB
+├ ○ /_not-found                          137 B          87.5 kB
+├ ○ /acerca-de                           2.57 kB        98.6 kB
+├ ○ /servicios                           4.4 kB          100 kB
+└ ƒ /servicios/[slug]                    5.32 kB         101 kB
++ First Load JS shared by all            87.3 kB
+  ├ chunks/117-07cd2ade56352db2.js       31.7 kB
+  ├ chunks/fd9d1056-cf48984c1108c87a.js  53.7 kB
+  └ other shared chunks (total)          1.95 kB
+
+
+
+[info] ○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • Image Optimization
+[info]  • non-static component /servicios/[slug]/page
+[info] 
