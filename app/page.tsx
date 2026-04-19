@@ -1,46 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import { Star, Menu, X } from 'lucide-react';
+import { Star } from 'lucide-react';
 import Link from 'next/link';
 import ConsultaModal from './components/ConsultaModal';
 import WhatsappIcon from './components/WhatsappIcon';
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '19516489947';
 
   return (
-    <div className="text-gray-200">
-      <header className="bg-black/30 backdrop-blur-lg shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-pink-400 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Santuario de Amor</h1>
-          <nav className="hidden md:flex space-x-6 text-white">
-            <Link href="#inicio" className="hover:text-pink-400">Inicio</Link>
-            <Link href="/servicios" prefetch={false} className="hover:text-pink-400">Servicios</Link>
-            <a href="#donaciones" className="hover:text-pink-400">Donaciones</a>
-            <Link href="/acerca-de" className="hover:text-pink-400">Acerca de</Link>
-          </nav>
-          <button onClick={() => setMenuOpen(!isMenuOpen)} className="md:hidden text-white">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-        {isMenuOpen && (
-          <nav className="md:hidden bg-black/50 backdrop-blur-md px-6 pb-4">
-            <ul className="flex flex-col items-center space-y-4">
-                <li><Link href="#inicio" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
-                <li><Link href="/servicios" prefetch={false} className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Servicios</Link></li>
-                <li><a href="#donaciones" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Donaciones</a></li>
-                <li><Link href="/acerca-de" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Acerca de</Link></li>
-            </ul>
-          </nav>
-        )}
-      </header>
-
-      <main id="inicio" className="text-center py-20 px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-4 [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">Despierta la Energía del Amor Verdadero</h2>
-        <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
+    <div className="text-gray-200 pt-20">
+      <main id="inicio" className="text-center pb-20 px-6">
+        <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-4 [text-shadow:0_0_15px_rgba(236,72,153,0.8),0_0_5px_rgba(236,72,153,0.5)]">Despierta la Energía del Amor Verdadero</h2>
+        <p className="max-w-2xl mx-auto text-lg text-gray-200 mb-8 [text-shadow:0_0_5px_rgba(200,200,200,0.5)]">
           Soy tu guía espiritual en el viaje hacia la sanación emocional y la conexión. Juntos, eliminaremos bloqueos y atraeremos la paz y el amor que mereces.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -54,7 +28,7 @@ export default function Home() {
 
       <section className="py-20 px-6">
         <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">Testimonios</h3>
+            <h3 className="text-3xl font-bold text-white [text-shadow:0_0_10px_rgba(236,72,153,0.6)]">Testimonios</h3>
             <p className="text-xl text-pink-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)] mt-1">Voces de Agradecimiento</p>
         </div>
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
@@ -77,7 +51,7 @@ export default function Home() {
       </section>
       
       <section id="servicios-preview" className="py-20 px-6">
-        <h3 className="text-3xl font-bold text-center mb-12 text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">Tu Viaje Hacia la Plenitud Comienza Aquí</h3>
+        <h3 className="text-3xl font-bold text-center mb-12 text-white [text-shadow:0_0_10px_rgba(236,72,153,0.6)]">Tu Viaje Hacia la Plenitud Comienza Aquí</h3>
         <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left">
             <div className="inline-flex items-center justify-center bg-pink-500 text-white w-16 h-16 rounded-full text-2xl font-bold mb-4 shadow-lg">1</div>

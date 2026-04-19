@@ -1,42 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+
+// El Header y Footer globales son gestionados por layout.tsx
 
 export default function AcercaDe() {
-    const [isMenuOpen, setMenuOpen] = useState(false);
-
     return (
-        <div className="min-h-screen bg-gray-900 text-gray-200">
-            <header className="bg-black/30 backdrop-blur-lg shadow-lg sticky top-0 z-50">
-                <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <h1 className="text-2xl font-bold text-pink-400 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-                        <Link href="/">Santuario de Amor</Link>
-                    </h1>
-                    <nav className="hidden md:flex space-x-6 text-white">
-                        <Link href="/#inicio" className="hover:text-pink-400">Inicio</Link>
-                        <Link href="/servicios" className="hover:text-pink-400">Servicios</Link>
-                        <a href="/#donaciones" className="hover:text-pink-400">Donaciones</a>
-                        <Link href="/acerca-de" className="hover:text-pink-400">Acerca de</Link>
-                    </nav>
-                    <button onClick={() => setMenuOpen(!isMenuOpen)} className="md:hidden text-white">
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
-                {isMenuOpen && (
-                    <nav className="md:hidden bg-black/50 backdrop-blur-md px-6 pb-4">
-                        <ul className="flex flex-col items-center space-y-4">
-                            <li><Link href="/#inicio" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
-                            <li><Link href="/servicios" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Servicios</Link></li>
-                            <li><a href="/#donaciones" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Donaciones</a></li>
-                            <li><Link href="/acerca-de" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>Acerca de</Link></li>
-                        </ul>
-                    </nav>
-                )}
-            </header>
-
-            <main className="container mx-auto px-6 py-12">
+        <div className="min-h-screen text-gray-200 pt-20"> {/* Padding superior para el Header global */}
+            {/* Se ha eliminado el padding superior (py-12 -> pb-12) */}
+            <main className="container mx-auto px-6 pb-12">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl font-extrabold text-pink-300 mb-6 [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">Acerca de Santuario de Amor</h2>
                     <p className="text-lg text-gray-300 mb-8 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
@@ -74,10 +46,6 @@ export default function AcercaDe() {
                     </div>
                 </div>
             </main>
-
-            <footer className="bg-gray-800 text-white py-10 text-center mt-12">
-                 <p>&copy; {new Date().getFullYear()} Santuario de Amor. Todos los derechos reservados.</p>
-            </footer>
         </div>
     );
 }

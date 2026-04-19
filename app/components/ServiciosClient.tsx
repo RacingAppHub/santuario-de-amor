@@ -10,20 +10,11 @@ const WhatsappIcon = dynamic(() => import('../components/WhatsappIcon'), { ssr: 
 
 export default function ServiciosClient() {
   const [isModalOpen, setModalOpen] = useState(false);
-  const phoneNumber = "19516489947";
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '19516489947';
 
   return (
-    <div className="text-gray-200">
-      <header className="bg-black/30 backdrop-blur-lg shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-pink-400 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Nuestros Servicios</h1>
-          <Link href="/" className="bg-pink-500 text-white text-2xl w-10 h-10 flex items-center justify-center rounded-full font-bold hover:bg-pink-600 transition duration-300 shadow-lg">
-            &larr;
-          </Link>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-6 py-20">
+    <div className="text-gray-200 pt-20">
+      <main className="container mx-auto px-6 pb-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-4 [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">
             Servicios 100% Digitales
@@ -65,7 +56,7 @@ export default function ServiciosClient() {
         <WhatsappIcon className="h-8 w-8" />
       </button>
 
-      {isModalOpen && <ConsultaModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} phoneNumber={phoneNumber} />}
+      {isModalOpen && <ConsultaModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} phoneNumber={phoneNumber} nombreServicio="Página de Servicios" />}
     </div>
   );
 }

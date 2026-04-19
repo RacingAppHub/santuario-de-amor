@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -6,7 +5,7 @@ import { serviciosData } from "@/lib/servicios-data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, ArrowLeft } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import ServiceIcon from "@/app/components/ServiceIcon";
 import ConsultaModal from '@/app/components/ConsultaModal';
 
@@ -29,18 +28,8 @@ export default function ServicioPage({ params }: ServicioPageProps) {
   const otrosServicios = serviciosData.filter((s) => s.slug !== slug);
 
   return (
-    <div className="text-gray-200 min-h-screen">
-      <header className="bg-black/30 backdrop-blur-lg shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-pink-400 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Santuario de Amor</Link>
-          <Link href="/servicios" className="flex items-center text-pink-300 hover:text-pink-400">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver a Servicios
-          </Link>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-6 py-12">
+    <div className="text-gray-200 min-h-screen pt-20">
+      <main className="container mx-auto px-6 pb-12">
         <article className="max-w-4xl mx-auto border border-white/10 rounded-xl p-4 md:p-12">
           <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-2xl shadow-black/50 mb-8">
             <Image
