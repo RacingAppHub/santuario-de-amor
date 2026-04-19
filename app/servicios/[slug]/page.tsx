@@ -29,9 +29,10 @@ export default function ServicioPage({ params }: ServicioPageProps) {
 
   return (
     <div className="text-gray-200 min-h-screen pt-20">
-      <main className="container mx-auto px-6 pb-12">
-        <article className="max-w-4xl mx-auto border border-white/10 rounded-xl p-4 md:p-12">
-          <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-2xl shadow-black/50 mb-8">
+      <main className="pb-12">
+        <article>
+          {/* IMAGEN FULL-WIDTH */}
+          <div className="relative w-full h-64 md:h-96 shadow-2xl shadow-black/50">
             <Image
               src={servicio.imageUrl}
               alt={`Imagen de ${servicio.title}`}
@@ -39,28 +40,30 @@ export default function ServicioPage({ params }: ServicioPageProps) {
               objectFit="cover"
               priority
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-6">
-            {servicio.title}
-          </h1>
+          {/* CONTENIDO CENTRADO PERO SIN MÁRGENES GLOBALES */}
+          <div className="max-w-4xl mx-auto px-6 py-12 text-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-8 [text-shadow:0_2px_5px_rgba(236,72,153,0.7)]">
+              {servicio.title}
+            </h1>
 
-          <div className="prose prose-lg max-w-none text-gray-300">
-            <p>{servicio.longDescription}</p>
-          </div>
+            <p className="text-xl text-gray-200 mb-12 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)] text-left md:text-center">
+              {servicio.longDescription}
+            </p>
 
-          <div className="mt-12 text-center">
             <button
               onClick={() => setModalOpen(true)}
-              className="inline-flex items-center justify-center bg-green-500 text-white text-lg font-bold px-10 py-3 rounded-full shadow-lg shadow-green-500/40 hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center justify-center bg-green-500 text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg shadow-green-500/40 hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
             >
               <MessageCircle className="w-6 h-6 mr-3" />
-              Consulta Gratis
+              Iniciar Consulta Gratuita
             </button>
           </div>
         </article>
 
-        <section className="max-w-5xl mx-auto mt-20 pt-10 border-t border-white/10">
+        <section className="max-w-5xl mx-auto mt-16 pt-10 px-6 border-t border-white/10">
           <h2 className="text-3xl font-bold text-center text-pink-300 mb-10">
             Explora Otros Rituales
           </h2>
