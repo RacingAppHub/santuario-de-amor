@@ -34,8 +34,8 @@ export default function Home() {
   return (
     <div className="text-gray-200 pt-20">
       <main id="inicio" className="text-center pb-20 px-6">
-        <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-4 [text-shadow:0_0_15px_rgba(236,72,153,0.8),0_0_5px_rgba(236,72,153,0.5)]">{fraseActiva.titulo}</h2>
-        <p className="max-w-2xl mx-auto text-lg text-gray-200 mb-8 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 [text-shadow:0_0_15px_rgba(236,72,153,0.8),0_0_5px_rgba(236,72,153,0.5)]">{fraseActiva.titulo}</h2>
+        <p className="max-w-2xl mx-auto text-xl text-gray-200 mb-8 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
           {fraseActiva.texto}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
