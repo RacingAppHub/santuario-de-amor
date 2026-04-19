@@ -1,51 +1,66 @@
 'use client';
 
-import Link from 'next/link';
+import { HeartHandshake, Sparkles, KeyRound } from 'lucide-react';
 
-// El Header y Footer globales son gestionados por layout.tsx
+export default function AcercaDePage() {
+  return (
+    <div className="min-h-screen text-gray-200 pt-24 md:pt-32"> 
+      <main className="container mx-auto px-6 pb-20">
+        <div className="max-w-4xl mx-auto flex flex-col gap-12 md:gap-16">
 
-export default function AcercaDe() {
-    return (
-        <div className="min-h-screen text-gray-200 pt-20"> {/* Padding superior para el Header global */}
-            {/* Se ha eliminado el padding superior (py-12 -> pb-12) */}
-            <main className="container mx-auto px-6 pb-12">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-extrabold text-pink-300 mb-6 [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">Acerca de Santuario de Amor</h2>
-                    <p className="text-lg text-gray-300 mb-8 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
-                        Santuario de Amor es un espacio sagrado dedicado a la guía espiritual, la sanación emocional y la manifestación de tus deseos más profundos. Creemos que el amor es la fuerza más poderosa del universo, y nuestra misión es ayudarte a alinear tu energía con esa fuerza para atraer la paz, la felicidad y las relaciones que mereces.
-                    </p>
+          {/* Sección Principal */}
+          <section className="text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold text-pink-300 mb-6 [text-shadow:0_2px_5px_rgba(236,72,153,0.7)]">
+              Acerca de Santuario de Amor
+            </h1>
+            <p className="text-lg md:text-xl text-gray-300 [text-shadow:0_1px_3px_rgba(0,0,0,0.7)]">
+              Santuario de Amor nació como un espacio seguro y confidencial, dedicado a la guía espiritual y la sanación integral. Creemos firmemente que el amor es la frecuencia más alta y poderosa del universo; no solo el amor de pareja, sino el amor propio, la compasión y la paz que surgen cuando tu energía está alineada. Nuestra intención es ayudarte a reconectar con esa fuerza para que atraigas la abundancia, la tranquilidad y las relaciones sanas que mereces.
+            </p>
+          </section>
 
-                    <div className="space-y-10">
-                        <div>
-                            <h3 className="text-2xl font-bold text-pink-400 mb-3 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Nuestra Misión</h3>
-                            <p className="text-gray-400">
-                                Nuestra misión es proporcionar un faro de luz para aquellos que se sienten perdidos en la oscuridad de los desafíos emocionales y amorosos. A través de rituales personalizados, limpiezas energéticas y una guía compasiva, te empoderamos para que tomes el control de tu destino romántico y encuentres la plenitud.
-                            </p>
-                        </div>
+          {/* Misión */}
+          <section className="bg-gray-800/20 border border-white/10 rounded-2xl p-8 md:p-10 backdrop-blur-sm">
+            <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-4 text-center [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">Nuestra Misión</h2>
+            <p className="text-md md:text-lg text-gray-300 text-center [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
+              Queremos ser un faro de luz en esos momentos donde la confusión, el dolor o el estancamiento no te dejan ver tu propio brillo. A través de rituales personalizados, limpiezas energéticas a distancia y una guía compasiva, nuestro propósito es entregarte las herramientas exactas para que liberes tus bloqueos, recuperes tu poder personal y tomes el control consciente de tu destino.
+            </p>
+          </section>
 
-                        <div id="terminos">
-                            <h3 className="text-2xl font-bold text-pink-400 mb-3 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Términos y Condiciones</h3>
-                            <p className="text-gray-400">
-                                Los servicios ofrecidos en Santuario de Amor son para fines de guía espiritual y entretenimiento. Los resultados de los trabajos espirituales pueden variar de persona a persona y no se garantizan resultados específicos. Al solicitar nuestros servicios, confirmas que eres mayor de 18 años y que entiendes la naturaleza de los mismos. Las consultas no reemplazan el consejo médico, legal o financiero profesional.
-                            </p>
-                        </div>
+          {/* Filosofía */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-8 text-center [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">Nuestra Filosofía de Sanación</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center flex flex-col items-center">
+                <HeartHandshake className="w-12 h-12 text-pink-500 mb-4" />
+                <h3 className="font-bold text-xl mb-2 text-white">Empatía sin juicios</h3>
+                <p className="text-gray-400">Este es un refugio seguro. Escuchamos tu historia con el corazón abierto y total confidencialidad.</p>
+              </div>
+              <div className="text-center flex flex-col items-center">
+                <Sparkles className="w-12 h-12 text-pink-500 mb-4" />
+                <h3 className="font-bold text-xl mb-2 text-white">Sanación desde la luz</h3>
+                <p className="text-gray-400">No trabajamos desde el miedo ni forzamos voluntades; todo nuestro enfoque respeta el libre albedrío y busca tu mayor bien.</p>
+              </div>
+              <div className="text-center flex flex-col items-center">
+                <KeyRound className="w-12 h-12 text-pink-500 mb-4" />
+                <h3 className="font-bold text-xl mb-2 text-white">Empoderamiento interior</h3>
+                <p className="text-gray-400">Nuestro mayor éxito no es crear dependencia, sino enseñarte a despertar y utilizar la magia y la fuerza que ya residen en tu interior.</p>
+              </div>
+            </div>
+          </section>
 
-                        <div id="privacidad">
-                            <h3 className="text-2xl font-bold text-pink-400 mb-3 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Políticas de Privacidad</h3>
-                            <p className="text-gray-400">
-                                Tu confianza es primordial para nosotros. Toda la información compartida durante nuestras consultas y rituales es estrictamente confidencial. No compartimos tus datos personales con terceros bajo ninguna circunstancia. La discreción y el respeto por tu privacidad son los pilares de nuestro santuario.
-                            </p>
-                        </div>
+          {/* Guía */}
+          <section className="bg-gray-800/20 border border-white/10 rounded-2xl p-8 md:p-10 backdrop-blur-sm mt-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-4 text-center [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">Conoce a tu Guía</h2>
+            <div className="text-center">
+              <h3 className="text-xl font-semibold text-white mb-2">¡Hola! Soy el Guía Altair.</h3>
+              <p className="text-md md:text-lg text-gray-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
+              Detrás de Santuario de Amor hay un ser humano que también ha transitado por momentos de estancamiento, dudas y bloqueos. Precisamente por eso, mi enfoque no es el de un sabio inalcanzable, sino el de un acompañante en tu proceso. He dedicado mi camino espiritual a formarme en herramientas de sanación profunda —como el tarot evolutivo, las limpiezas energéticas y la numerología— para ponerlas a tu servicio. Mi mayor satisfacción es ver cómo las personas que llegan a mí con el corazón pesado, logran irse con una sonrisa, claridad mental y una energía renovada. Estoy aquí para escucharte y ayudarte a volver a volar.
+              </p>
+            </div>
+          </section>
 
-                        <div id="reembolsos">
-                            <h3 className="text-2xl font-bold text-pink-400 mb-3 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">Política de Reembolso</h3>
-                            <p className="text-gray-400">
-                                Debido a la naturaleza de nuestros servicios como productos digitales y guías espirituales entregados instantáneamente, no ofrecemos reembolsos una vez que se ha realizado una donación y se ha entregado el producto digital correspondiente (como el PDF o el acceso a la página de agradecimiento). Agradecemos tu comprensión y tu apoyo a nuestra misión.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </main>
         </div>
-    );
+      </main>
+    </div>
+  );
 }
