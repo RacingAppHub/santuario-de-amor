@@ -5,47 +5,62 @@
 
 Esta es una landing page para "Santuario de Amor", un servicio de guía espiritual. La página está diseñada para ser visualmente atractiva, con un diseño moderno y profesional que inspira confianza y tranquilidad. El objetivo es presentar los servicios ofrecidos, mostrar testimonios de clientes y facilitar el contacto a través de WhatsApp.
 
-## Plan de Desarrollo: Fase 2 - Landing Pages para Google Ads
+## Funcionalidades Implementadas
 
-**Objetivo:** Transformar la sección de servicios en una serie de landing pages de alta conversión, una para cada servicio, con el fin de maximizar la efectividad de las campañas de Google Ads y mejorar la experiencia del usuario.
+### Fase 1: Diseño Inicial y Estructura
 
-### Fase 1: Arquitectura y Diseño
+*   **Página de Inicio (`/`):**
+    *   Diseño de landing page con un fondo atractivo.
+    *   Secciones para "Servicios", "Donaciones" y "Acerca de".
+    *   Encabezado y pie de página reutilizables.
+*   **Página de Servicios (`/servicios`):**
+    *   Catálogo de servicios presentados en tarjetas con un diseño atractivo.
+*   **Páginas Legales:**
+    *   Creación de páginas para "Política de Privacidad", "Términos y Condiciones" y "Política de Reembolso".
+*   **Estilo y Diseño:**
+    *   Paleta de colores definida en la configuración de Tailwind, con un enfoque en tonos rosa, verde y grises.
+    *   Tipografía con fuentes sans-serif para legibilidad.
+    *   Componentes visuales modernos como tarjetas con sombras y botones redondeados.
 
-1.  **Centralizar Datos de Servicios:**
-    *   **Acción:** Crear un nuevo archivo en `lib/servicios-data.ts`.
-    *   **Propósito:** Este archivo exportará un array de objetos. Cada objeto representará un servicio y contendrá su `id`, `slug` (para la URL), `title`, `shortDescription` (para la página de catálogo), `longDescription` (para la landing page), y un `imageUrl` para la imagen principal. Esto facilita la gestión y escalabilidad del contenido.
+### Fase 2: Landing Pages para Servicios
 
-2.  **Crear Ruta Dinámica para Servicios:**
-    *   **Acción:** Crear una nueva estructura de carpetas: `app/servicios/[slug]`. Dentro de esta, se creará el archivo `page.tsx`.
-    *   **Propósito:** Esta será la plantilla de landing page dinámica. El `[slug]` permitirá que cualquier URL (ej. `/servicios/limpieza-energetica`) sea manejada por este único archivo, cargando dinámicamente el contenido correspondiente.
+*   **Arquitectura de Datos:**
+    *   Centralización de los datos de los servicios en `lib/servicios-data.ts`.
+*   **Rutas Dinámicas:**
+    *   Creación de la ruta `app/servicios/[slug]` para generar páginas de destino dinámicas para cada servicio.
+*   **Diseño de Plantilla de Servicio:**
+    *   Layout de dos columnas en escritorio: una barra lateral con la lista de todos los servicios y una columna principal con los detalles del servicio seleccionado.
+    *   Botón de llamada a la acción para contactar por WhatsApp.
 
-3.  **Diseñar la Plantilla de Landing Page (`app/servicios/[slug]/page.tsx`):**
-    *   **Estructura:** La página tendrá un layout de dos columnas en escritorio.
-    *   **Columna Izquierda (Sidebar):**
-        *   Contendrá una lista de **todos** los servicios, funcionando como un menú de navegación secundario.
-        *   El servicio actualmente activo (el que corresponde al `slug` de la URL) estará visualmente resaltado.
-    *   **Columna Derecha (Contenido Principal):**
-        *   Mostrará el `title` del servicio como un encabezado principal.
-        *   Incluirá la `imageUrl` del servicio.
-        *   Presentará la `longDescription` para explicar en detalle los beneficios y el proceso.
-        *   Tendrá un botón de Llamada a la Acción (CTA) prominente para contactar por WhatsApp.
+### Fase 2.5: Ajustes de Diseño y Correcciones
 
-### Fase 2: Implementación y Conexión
+*   **Encabezado:**
+    *   Ajustado el tamaño del título para una mejor visualización en dispositivos móviles.
+*   **Páginas Legales:**
+    *   Eliminado el encabezado redundante para un diseño más limpio y consistente.
+*   **Proceso de Despliegue:**
+    *   Solucionado un problema con los `hooks` de `husky` que impedían el despliegue automático.
 
-1.  **Actualizar la Página Principal de Servicios (`/servicios`):**
-    *   **Acción:** Modificar el componente `app/components/ServiciosClient.tsx`.
-    *   **Propósito:** Cada tarjeta de servicio, que actualmente es estática, se convertirá en un componente `<Link>` de Next.js. Al hacer clic, el usuario será redirigido a la landing page dinámica correspondiente (ej. a `/servicios/lectura-de-tarot`).
+## Próximos Pasos: Fase 3 - Pulido y Contenido
+
+**Objetivo:** Enriquecer el sitio con contenido clave para generar confianza y mejorar la experiencia del usuario, además de realizar una revisión final de la interfaz.
+
+1.  **Desarrollar la Página "Acerca de":**
+    *   **Acción:** Añadir contenido a la página `app/acerca-de/page.tsx`.
+    *   **Propósito:** Contar la historia, la misión y los valores de "Santuario de Amor". Presentar al guía espiritual para crear una conexión más personal y generar confianza.
+2.  **Crear una Sección de Testimonios:**
+    *   **Acción:** Añadir una nueva sección a la página de inicio (`app/page.tsx`).
+    *   **Propósito:** Mostrar testimonios de clientes satisfechos. Esto actúa como prueba social, un elemento crucial para la credibilidad y la conversión de nuevos clientes.
+3.  **Optimización de Imágenes:**
+    *   **Acción:** Revisar todas las imágenes del sitio.
+    *   **Propósito:** Asegurarse de que las imágenes estén comprimidas y en formatos modernos (como WebP) para garantizar tiempos de carga rápidos, lo cual es vital para la retención de usuarios y el SEO.
+4.  **Revisión Final de Estilo:**
+    *   **Acción:** Realizar una revisión exhaustiva de la interfaz de usuario en todo el sitio.
+    *   **Propósito:** Verificar la consistencia en espaciados, tamaños de fuente, colores y alineaciones para un acabado profesional y pulido.
 
 ## Estructura del Proyecto y Tecnologías
 
 *   **Framework:** Next.js (con App Router)
 *   **Lenguaje:** TypeScript
-*   **Estilos:** Tailwind CSS v4
+*   **Estilos:** Tailwind CSS
 *   **Iconos:** Lucide React
-
-## Diseño y Estilo
-
-*   **Paleta de Colores:** Definida en la configuración de Tailwind, con un enfoque en tonos rosa, verde y grises para una sensación espiritual y profesional.
-*   **Tipografía:** Fuentes sans-serif estándar para legibilidad, con jerarquía visual a través del tamaño y peso de la fuente.
-*   **Componentes Visuales:** Uso de tarjetas con sombras, botones redondeados e iconos para una interfaz moderna e interactiva.
-

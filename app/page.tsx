@@ -1,27 +1,48 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Star } from 'lucide-react';
 import Link from 'next/link';
 import ConsultaModal from './components/ConsultaModal';
 import WhatsappIcon from './components/WhatsappIcon';
 
+const frases = [
+  {
+    titulo: "Sana tu Energía y Abre las Puertas al Amor",
+    texto: "Aquí creemos que la confusión, los bloqueos o la falta de prosperidad nacen cuando nuestro corazón y nuestra mente acumulan cargas que no les pertenecen. Sanar desde el amor es la llave maestra para entender tu destino, descifrar tus sueños y armonizar todos tus vínculos. Estoy aquí para acompañarte a liberar esas energías densas para que vuelvas a brillar. Ya sea sanando una relación, activando tu amor propio o abriendo tus caminos hacia la abundancia, juntos devolveremos la armonía a tu vida para que atraigas todo lo que mereces."
+  },
+  {
+    titulo: "El Viaje Hacia el Amor Verdadero Empieza en ti",
+    texto: "El amor es la fuerza más poderosa del universo, pero a veces la envidia, el estrés o las energías estancadas nos impiden conectar con él. Si buscas armonizar un vínculo importante, atraer relaciones sanas o simplemente volver a enamorarte de ti mismo/a, has llegado a tu refugio. Permítete encontrar las respuestas que te da el tarot, descubrir los mensajes de tu alma o limpiar tu campo energético. A través de este viaje de sanación profunda, lograremos que el amor propio y la paz espiritual se conviertan en tu mayor imán para la felicidad."
+  },
+  {
+    titulo: "Vibra en la Frecuencia del Amor y la Abundancia",
+    texto: "Todo en el universo es energía, y cuando tu corazón está bloqueado por miedos o heridas del pasado, la prosperidad y la paz no encuentran cómo entrar. Yo te ayudo a alinear tu frecuencia para que dejes de luchar contra la corriente y empieces a fluir. Explora tus vidas pasadas, activa anclas de poder en tu mente o realiza un ritual profundo de autocuidado. Al limpiar tus canales energéticos y abrazar el amor en todas sus formas, verás cómo tus caminos se abren mágicamente hacia la vida que siempre has soñado."
+  }
+];
+
 export default function Home() {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [fraseActiva, setFraseActiva] = useState(frases[0]);
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '19516489947';
+
+  useEffect(() => {
+    const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+    setFraseActiva(fraseAleatoria);
+  }, []);
 
   return (
     <div className="text-gray-200 pt-20">
       <main id="inicio" className="text-center pb-20 px-6">
-        <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-4 [text-shadow:0_0_15px_rgba(236,72,153,0.8),0_0_5px_rgba(236,72,153,0.5)]">Despierta la Energía del Amor Verdadero</h2>
+        <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-4 [text-shadow:0_0_15px_rgba(236,72,153,0.8),0_0_5px_rgba(236,72,153,0.5)]">{fraseActiva.titulo}</h2>
         <p className="max-w-2xl mx-auto text-lg text-gray-200 mb-8 [text-shadow:0_0_5px_rgba(200,200,200,0.5)]">
-          Soy tu guía espiritual en el viaje hacia la sanación emocional y la conexión. Juntos, eliminaremos bloqueos y atraeremos la paz y el amor que mereces.
+          {fraseActiva.texto}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/servicios" prefetch={false} className="bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition duration-300 shadow-lg">Explorar Servicios</Link>
+          <Link href="/servicios" prefetch={false} className="bg-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-600 transition duration-300 shadow-lg">💖 Iniciar mi Sanación</Link>
           <button onClick={() => setModalOpen(true)} className="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition duration-300 flex items-center justify-center shadow-lg">
             <WhatsappIcon className="w-5 h-5 mr-2" />
-            Consulta Gratis
+            Cuéntame tu historia
           </button>
         </div>
       </main>
