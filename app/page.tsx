@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { Star, Menu, X } from 'lucide-react';
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ConsultaModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} phoneNumber={phoneNumber} />
+      <ConsultaModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} phoneNumber={phoneNumber} nombreServicio="Página de Inicio" />
     </div>
   );
 }

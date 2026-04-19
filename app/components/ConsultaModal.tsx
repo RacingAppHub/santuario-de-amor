@@ -6,9 +6,10 @@ interface ConsultaModalProps {
   isOpen: boolean;
   onClose: () => void;
   phoneNumber: string;
+  nombreServicio: string;
 }
 
-export default function ConsultaModal({ isOpen, onClose, phoneNumber }: ConsultaModalProps) {
+export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServicio }: ConsultaModalProps) {
   const [nombre, setNombre] = useState('');
   const [fechaNacimiento, setFechaNacimiento] = useState('');
   const [motivo, setMotivo] = useState('');
@@ -16,14 +17,10 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber }: Consulta
   const [isFormValid, setIsFormValid] = useState(false);
   const [isAgeValid, setIsAgeValid] = useState(false);
 
-  // Effect to validate form, check age, and construct WhatsApp URL
   useEffect(() => {
-    // 1. Age Validation
     let ageIsValid = false;
     if (fechaNacimiento) {
       const birthDate = new Date(fechaNacimiento);
-      // Ensure the date is not in the future, just in case.
-      // The getTime() check handles invalid date strings like "0000-12-12"
       if (!isNaN(birthDate.getTime()) && birthDate < new Date()) {
         const today = new Date();
         const cutoffDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
@@ -34,16 +31,14 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber }: Consulta
     }
     setIsAgeValid(ageIsValid);
 
-    // 2. Form Completeness Validation
     const isComplete = nombre.trim() !== '' && fechaNacimiento.trim() !== '' && motivo.trim() !== '';
-
-    // 3. Final Validation for the button
     const finalValidity = isComplete && ageIsValid;
     setIsFormValid(finalValidity);
 
     if (finalValidity) {
       const textParts = [
         '*Nueva Consulta de Santuario de Amor*\n\n',
+        `*Solicitud desde:* ${nombreServicio}\n\n`,
         `*Nombre Completo:* ${nombre}\n`,
         `*Fecha de Nacimiento:* ${fechaNacimiento}\n`,
         `*Motivo de Consulta:* ${motivo}`
@@ -54,9 +49,8 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber }: Consulta
     } else {
       setWhatsappUrl('');
     }
-  }, [nombre, fechaNacimiento, motivo, phoneNumber]);
+  }, [nombre, fechaNacimiento, motivo, phoneNumber, nombreServicio]);
 
-  // Effect to reset form state when modal opens
   useEffect(() => {
     if (isOpen) {
         setNombre('');
