@@ -8,10 +8,28 @@ import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import ServiceIcon from "@/app/components/ServiceIcon";
 import ConsultaModal from '@/app/components/ConsultaModal';
+import { Metadata } from 'next';
 
 interface ServicioPageProps {
   params: {
     slug: string;
+  };
+}
+
+// FUNCIÓN PARA GENERAR METADATA DINÁMICAMENTE
+export async function generateMetadata({ params }: ServicioPageProps): Promise<Metadata> {
+  const servicio = serviciosData.find((s) => s.slug === params.slug);
+  
+  if (!servicio) {
+    return {
+      title: "Servicio no encontrado",
+      description: "El servicio que buscas no existe. Explora nuestros otros rituales.",
+    };
+  }
+
+  return {
+    title: servicio.title,
+    description: servicio.shortDescription,
   };
 }
 

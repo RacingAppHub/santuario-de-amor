@@ -5,6 +5,14 @@ import { Star } from 'lucide-react';
 import Link from 'next/link';
 import ConsultaModal from './components/ConsultaModal';
 import WhatsappIcon from './components/WhatsappIcon';
+import { Metadata } from 'next';
+
+// METADATA PARA SEO
+export const metadata: Metadata = {
+  title: 'Inicio',
+  description: 'Bienvenido a Santuario de Amor. Sana tu energía, abre las puertas al amor verdadero y atrae la abundancia a tu vida. Comienza tu viaje de sanación hoy con una guía espiritual experta.',
+};
+
 
 const frases = [
   {
