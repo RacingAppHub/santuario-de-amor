@@ -9,6 +9,7 @@ import ServiceIcon from './ServiceIcon'; // Importamos el componente de iconos
 const ConsultaModal = dynamic(() => import('../components/ConsultaModal'), { ssr: false });
 const WhatsappIcon = dynamic(() => import('../components/WhatsappIcon'), { ssr: false });
 
+// FORZAR RE-BUILD
 export default function ServiciosClient() {
   const [isModalOpen, setModalOpen] = useState(false);
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '19516489947';
