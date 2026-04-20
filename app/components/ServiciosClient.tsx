@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { serviciosData } from '@/lib/servicios-data';
+import ServiceIcon from './ServiceIcon'; // Importamos el componente de iconos
 
 const ConsultaModal = dynamic(() => import('../components/ConsultaModal'), { ssr: false });
 const WhatsappIcon = dynamic(() => import('../components/WhatsappIcon'), { ssr: false });
@@ -29,8 +30,10 @@ export default function ServiciosClient() {
             <Link
               href={`/servicios/${service.slug}`}
               key={service.id}
-              className="block border border-white/20 p-8 rounded-xl flex flex-col transition-all duration-300 hover:bg-white/10 hover:border-pink-400 hover:shadow-2xl hover:shadow-pink-500/20 transform hover:-translate-y-2"
+              className="block border border-white/20 p-8 rounded-xl flex flex-col items-center text-center transition-all duration-300 hover:bg-white/10 hover:border-pink-400 hover:shadow-2xl hover:shadow-pink-500/20 transform hover:-translate-y-2"
             >
+              {/* Icono añadido aquí */}
+              <ServiceIcon name={service.icon} className="w-12 h-12 mb-5 text-pink-300" />
               <h2 className="text-2xl font-bold text-pink-300 mb-4 [text-shadow:0_2px_3px_rgba(0,0,0,0.7)]">{service.title}</h2>
               <p className="text-gray-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)] flex-grow">{service.shortDescription}</p>
             </Link>
