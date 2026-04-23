@@ -4,12 +4,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { serviciosData } from '@/lib/servicios-data';
-import ServiceIcon from './ServiceIcon'; // Importamos el componente de iconos
+import ServiceIcon from './ServiceIcon';
+import { ArrowRight } from 'lucide-react';
 
 const ConsultaModal = dynamic(() => import('../components/ConsultaModal'), { ssr: false });
 const WhatsappIcon = dynamic(() => import('../components/WhatsappIcon'), { ssr: false });
 
-// FORZAR RE-BUILD
 export default function ServiciosClient() {
   const [isModalOpen, setModalOpen] = useState(false);
   const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '19516489947';
@@ -21,9 +21,18 @@ export default function ServiciosClient() {
           <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-4 [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">
             Servicios 100% Digitales
           </h1>
-          <p className="max-w-3xl mx-auto text-lg text-gray-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
-            Cada servicio es una experiencia digital diseñada para guiarte. Haz clic en uno para explorar en profundidad.
+          <p className="max-w-3xl mx-auto text-lg text-gray-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)] mb-8">
+            Cada servicio es una experiencia digital diseñada para guiarte. Explora las opciones y contáctame para una consulta inicial sin compromiso.
           </p>
+          
+          <button
+            onClick={() => setModalOpen(true)}
+            className="bg-green-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-green-600 active:scale-95 transition duration-300 z-40 flex items-center justify-center mx-auto"
+            aria-label="Solicitar consulta gratuita por WhatsApp"
+          >
+            <WhatsappIcon className="h-7 w-7 mr-3" />
+            Consulta Gratis Ahora
+          </button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -33,7 +42,6 @@ export default function ServiciosClient() {
               key={service.id}
               className="block border border-white/20 p-8 rounded-xl flex flex-col items-center text-center transition-all duration-300 hover:bg-white/10 hover:border-pink-400 hover:shadow-2xl hover:shadow-pink-500/20 transform hover:-translate-y-2"
             >
-              {/* Icono añadido aquí */}
               <ServiceIcon name={service.icon} className="w-12 h-12 mb-5 text-pink-300" />
               <h2 className="text-2xl font-bold text-pink-300 mb-4 [text-shadow:0_2px_3px_rgba(0,0,0,0.7)]">{service.title}</h2>
               <p className="text-gray-300 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)] flex-grow">{service.shortDescription}</p>
@@ -41,15 +49,18 @@ export default function ServiciosClient() {
           ))}
         </div>
 
-        <div className="text-center mt-20 bg-black/20 border border-white/10 rounded-xl p-10 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-4 [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">Inicia tu Viaje Digital</h2>
-          <p className="text-gray-300 mb-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
-            El primer paso es una consulta gratuita y sin compromiso. Permíteme entender tu situación para poder guiarte de la mejor manera.
-          </p>
-          <p className="text-gray-300 font-semibold [text-shadow:0_1px_2px_rgba(0,0,0,0.7)]">
-            Utiliza el botón flotante para solicitar tu consulta gratuita ahora.
-          </p>
+        <div className="text-center mt-20">
+          <h2 className="text-3xl font-bold text-white mb-6 [text-shadow:0_2px_4px_rgba(0,0,0,0.7)]">¿Listo para Iniciar tu Transformación?</h2>
+          <button
+            onClick={() => setModalOpen(true)}
+            className="bg-pink-500 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-pink-600 active:scale-95 transition duration-300 z-40 flex items-center justify-center mx-auto"
+            aria-label="Solicitar consulta gratuita por WhatsApp"
+          >
+            Consulta tu Caso Sin Compromiso
+            <ArrowRight className="h-6 w-6 ml-3" />
+          </button>
         </div>
+
       </main>
 
       <button

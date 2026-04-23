@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
@@ -18,7 +17,7 @@ export default function PoliticaDePrivacidad() {
               <li><strong>Información de Contacto:</strong> Tu nombre y número de teléfono (a través de WhatsApp).</li>
               <li><strong>Información Personal:</strong> Tu fecha de nacimiento, necesaria para la realización de análisis y rituales.</li>
               <li><strong>Información de la Consulta:</strong> El motivo de tu consulta y los detalles que compartas voluntariamente durante nuestras conversaciones. Esta es considerada información altamente sensible y tratada con el máximo respeto.</li>
-              <li><strong>Información de Pago:</strong> Las transacciones son procesadas por pasarelas de pago externas (como Paddle). Nosotros no almacenamos, ni tenemos acceso a los detalles completos de tu tarjeta de crédito o débito.</li>
+              <li><strong>Información de Pago:</strong> Los pagos se coordinan directamente a través de un método de transferencia acordado (por ejemplo, Wise). No solicitamos ni almacenamos detalles de tarjetas de crédito o débito en nuestro sitio web.</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-pink-200">2. Cómo Usamos tu Información</h2>
@@ -26,7 +25,7 @@ export default function PoliticaDePrivacidad() {
             <ul>
               <li>Para proveer y personalizar los servicios que has solicitado (rituales, lecturas, análisis, etc.).</li>
               <li>Para comunicarnos contigo en relación a tu consulta y dar seguimiento a tu proceso.</li>
-              <li>Para procesar los pagos de los servicios adquiridos a través de nuestros proveedores externos.</li>
+              <li>Para gestionar y confirmar la recepción de los pagos de los servicios acordados.</li>
               <li>Para cumplir con los requisitos legales y regulatorios.</li>
             </ul>
             <p><strong>Jamás venderemos, compartiremos o alquilaremos tu información personal a terceros con fines de marketing.</strong></p>
@@ -44,7 +43,7 @@ export default function PoliticaDePrivacidad() {
             <h2 className="text-2xl font-bold text-pink-200">6. Cambios a esta Política</h2>
             <p>Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento. Los cambios y aclaraciones entrarán en vigor inmediatamente después de su publicación en el sitio web. Te recomendamos revisar esta página periódicamente.</p>
 
-            <p className="pt-4"><strong>Última actualización:</strong> [Fecha Actual]</p>
+            <p className="pt-4"><strong>Última actualización:</strong> 27 de Julio de 2024</p>
           </div>
         </article>
       </main>

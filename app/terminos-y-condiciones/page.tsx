@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
@@ -16,13 +15,13 @@ export default function TerminosYCondiciones() {
             <p>Los servicios ofrecidos en este sitio (amarres de amor, limpiezas energéticas, endulzamientos, etc.) son para fines de entretenimiento y guía espiritual, basados en prácticas esotéricas y tradiciones místicas. Los resultados no están garantizados y pueden variar de persona a persona. Estos servicios no sustituyen el consejo médico, legal, financiero o psicológico profesional.</p>
 
             <h2 className="text-2xl font-bold text-pink-200">2. Requisito de Edad</h2>
-            <p>Para contratar cualquiera de nuestros servicios, debes tener al menos 18 años de edad. Al realizar una consulta o un pago, confirmas que cumples con este requisito.</p>
+            <p>Para contratar cualquiera de nuestros servicios, debes tener al menos 18 años de edad. Al realizar una consulta, confirmas que cumples con este requisito.</p>
 
             <h2 className="text-2xl font-bold text-pink-200">3. Proceso de Consulta y Servicio</h2>
-            <p>El proceso comienza con una consulta inicial (gratuita o de pago, según se especifique) para evaluar tu situación. Una vez acordado el servicio, se procederá a la realización del mismo tras la confirmación del pago. La comunicación se mantendrá a través de los canales acordados, principalmente WhatsApp.</p>
+            <p>El proceso comienza con una consulta inicial para evaluar tu situación. Una vez acordado el servicio y el precio, se procederá a la realización del mismo tras la confirmación del pago. La comunicación y coordinación del pago se mantendrán a través de los canales acordados, principalmente WhatsApp.</p>
 
             <h2 className="text-2xl font-bold text-pink-200">4. Pagos</h2>
-            <p>Todos los servicios deben ser pagados por adelantado. Utilizamos pasarelas de pago externas y seguras. Al realizar un pago, aceptas los términos de servicio de dicho procesador de pagos (por ejemplo, Paddle). Los precios están indicados en la página de servicios y pueden estar sujetos a cambios.</p>
+            <p>Todos los servicios deben ser pagados por adelantado. El pago se realiza mediante un método de transferencia directa acordado durante la consulta (por ejemplo, Wise). Los precios de los servicios se comunican y acuerdan contigo antes de cualquier compromiso. </p>
 
             <h2 className="text-2xl font-bold text-pink-200">5. Política de Reembolso</h2>
             <p>Dada la naturaleza espiritual y energética de los servicios, y el tiempo y los recursos dedicados a cada ritual, no se ofrecen reembolsos una vez que el servicio ha sido realizado. Para más detalles, por favor consulta nuestra <Link href="/politica-de-reembolso" className="text-pink-300 hover:text-pink-400">Política de Reembolso</Link>.</p>
@@ -34,12 +33,12 @@ export default function TerminosYCondiciones() {
             <p>Se espera que los clientes se comuniquen de manera respetuosa. Nos reservamos el derecho de rechazar o terminar un servicio si se produce un comportamiento abusivo, amenazante o inapropiado, sin derecho a reembolso.</p>
             
             <h2 className="text-2xl font-bold text-pink-200">8. Limitación de Responsabilidad</h2>
-            <p>Santuario de Amor no será responsable por ninguna decisión que tomes basada en la guía espiritual o los servicios recibidos. Asumes total responsabilidad por tus acciones y sus consecuencias. Los servicios son una herramienta de apoyo, no una solución definitiva a los problemas de la vida.</p>
+            <p>Santuario de Amor no será responsable por ninguna decision que tomes basada en la guía espiritual o los servicios recibidos. Asumes total responsabilidad por tus acciones y sus consecuencias. Los servicios son una herramienta de apoyo, no una solución definitiva a los problemas de la vida.</p>
 
             <h2 className="text-2xl font-bold text-pink-200">9. Modificaciones a los Términos</h2>
             <p>Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. La versión más reciente siempre estará disponible en esta página.</p>
 
-            <p className="pt-4"><strong>Última actualización:</strong> [Fecha Actual]</p>
+            <p className="pt-4"><strong>Última actualización:</strong> 27 de Julio de 2024</p>
           </div>
         </article>
       </main>

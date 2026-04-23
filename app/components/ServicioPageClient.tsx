@@ -5,9 +5,9 @@ import { serviciosData } from "@/lib/servicios-data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
 import ServiceIcon from "@/app/components/ServiceIcon";
 import ConsultaModal from '@/app/components/ConsultaModal';
+import WhatsappIcon from '@/app/components/WhatsappIcon'; // <- IMPORTADO
 
 interface ServicioPageClientProps {
   slug: string;
@@ -28,7 +28,6 @@ export default function ServicioPageClient({ slug }: ServicioPageClientProps) {
     <div className="text-gray-200 min-h-screen pt-20">
       <main className="pb-12">
         <article>
-          {/* IMAGEN FULL-WIDTH */}
           <div className="relative w-full h-64 md:h-96 shadow-2xl shadow-black/50">
             <Image
               src={servicio.imageUrl}
@@ -40,23 +39,26 @@ export default function ServicioPageClient({ slug }: ServicioPageClientProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
 
-          {/* CONTENIDO CENTRADO */}
-          <div className="max-w-4xl mx-auto px-6 py-12 text-center">
+          {/* --- NUEVO BOTÓN DE ACCIÓN INMEDIATA --- */}
+          <div className="text-center -mt-8 relative z-10">
+             <button
+                onClick={() => setModalOpen(true)}
+                className="bg-green-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-green-600 active:scale-95 transition-transform duration-300 transform hover:scale-105"
+                aria-label="Solicitar consulta gratuita por WhatsApp"
+              >
+                <WhatsappIcon className="h-7 w-7 mr-3 inline-block" />
+                Consulta Gratis Ahora
+            </button>
+          </div>
+
+          <div className="max-w-4xl mx-auto px-6 pt-12 text-center">
             <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-8 [text-shadow:0_2px_5px_rgba(236,72,153,0.7)]">
               {servicio.title}
             </h1>
-
             <p className="text-xl text-gray-200 mb-12 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)] text-left md:text-center">
               {servicio.longDescription}
             </p>
-
-            <button
-              onClick={() => setModalOpen(true)}
-              className="inline-flex items-center justify-center bg-green-500 text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg shadow-green-500/40 hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
-            >
-              <MessageCircle className="w-6 h-6 mr-3" />
-              Iniciar Consulta Gratuita
-            </button>
+            {/* El botón antiguo de aquí se ha eliminado para simplificar */}
           </div>
         </article>
 
@@ -79,6 +81,15 @@ export default function ServicioPageClient({ slug }: ServicioPageClientProps) {
         </section>
       </main>
       
+      {/* --- NUEVO BOTÓN FLOTANTE DE WHATSAPP --- */}
+      <button
+        onClick={() => setModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 active:scale-95 transition duration-300 z-40 flex items-center"
+        aria-label="Solicitar consulta gratuita"
+      >
+        <WhatsappIcon className="h-8 w-8" />
+      </button>
+
       <ConsultaModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} phoneNumber={phoneNumber} nombreServicio={servicio.title} />
     </div>
   );

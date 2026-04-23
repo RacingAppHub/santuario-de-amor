@@ -59,8 +59,8 @@ export default function Header() {
         <div className="absolute right-6 md:right-8 flex items-center">
             <nav className="hidden md:flex space-x-6">
                 <Link href="/" className="text-white hover:text-pink-400">Inicio</Link>
+                <Link href="/blog" className="text-white hover:text-pink-400">Blog</Link>
                 <Link href="/servicios" prefetch={false} className="text-white hover:text-pink-400">Servicios</Link>
-                <a href="#donaciones" className="text-white hover:text-pink-400">Donaciones</a>
                 <Link href="/acerca-de" className="text-white hover:text-pink-400">Acerca de</Link>
             </nav>
             <button onClick={() => setMenuOpen(!isMenuOpen)} className="md:hidden text-white">
@@ -72,8 +72,8 @@ export default function Header() {
         <nav className="md:hidden bg-black/50 backdrop-blur-md px-6 pb-4">
           <ul className="flex flex-col items-center space-y-4 py-4">
               <li><Link href="/" className="text-white hover:text-pink-400 text-lg" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
+              <li><Link href="/blog" className="text-white hover:text-pink-400 text-lg" onClick={() => setMenuOpen(false)}>Blog</Link></li>
               <li><Link href="/servicios" prefetch={false} className="text-white hover:text-pink-400 text-lg" onClick={() => setMenuOpen(false)}>Servicios</Link></li>
-              <li><a href="#donaciones" className="text-white hover:text-pink-400 text-lg" onClick={() => setMenuOpen(false)}>Donaciones</a></li>
               <li><Link href="/acerca-de" className="text-white hover:text-pink-400 text-lg" onClick={() => setMenuOpen(false)}>Acerca de</Link></li>
           </ul>
         </nav>

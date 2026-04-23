@@ -37,10 +37,10 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServ
 
     if (finalValidity) {
       const textParts = [
-        '*Nueva Consulta de Santuario de Amor*\n\n',
-        `*Solicitud desde:* ${nombreServicio}\n\n`,
-        `*Nombre Completo:* ${nombre}\n`,
-        `*Fecha de Nacimiento:* ${fechaNacimiento}\n`,
+        '*Nueva Consulta de Santuario de Amor*\\n\\n',
+        `*Solicitud desde:* ${nombreServicio}\\n\\n`,
+        `*Nombre Completo:* ${nombre}\\n`,
+        `*Fecha de Nacimiento:* ${fechaNacimiento}\\n`,
         `*Motivo de Consulta:* ${motivo}`
       ];
       const mensaje = textParts.join('');
@@ -106,7 +106,8 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServ
               onChange={(e) => setMotivo(e.target.value)}
               required
               rows={4}
-              className="w-full bg-gray-800/90 text-white border border-gray-600 rounded-lg px-3 py-2 focus:ring-pink-500 focus:border-pink-500 transition"
+              placeholder="Cuéntame tu caso con el detalle que consideres necesario. Esta información es confidencial y me ayudará a entender mejor tu situación."
+              className="w-full bg-gray-800/90 text-white border border-gray-600 rounded-lg px-3 py-2 focus:ring-pink-500 focus:border-pink-500 transition placeholder:text-gray-500"
             ></textarea>
           </div>
           <div className="flex justify-end gap-4 pt-4">
