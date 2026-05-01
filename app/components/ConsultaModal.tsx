@@ -36,14 +36,7 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServ
     setIsFormValid(finalValidity);
 
     if (finalValidity) {
-      const textParts = [
-        '*Nueva Consulta de Santuario de Amor*\\n\\n',
-        `*Solicitud desde:* ${nombreServicio}\\n\\n`,
-        `*Nombre Completo:* ${nombre}\\n`,
-        `*Fecha de Nacimiento:* ${fechaNacimiento}\\n`,
-        `*Motivo de Consulta:* ${motivo}`
-      ];
-      const mensaje = textParts.join('');
+      const mensaje = `Nueva Consulta de Santuario de Amor\n\nSolicitud desde: ${nombreServicio}\n\nNombre Completo: ${nombre}\nFecha de Nacimiento: ${fechaNacimiento}\nMotivo de Consulta: ${motivo}`;
       const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(mensaje)}&type=phone_number&app_absent=0`;
       setWhatsappUrl(url);
     } else {
