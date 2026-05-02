@@ -53,7 +53,7 @@ export const serviciosData: Servicio[] = [
     title: "Armonización Energética de Relaciones",
     slug: "armonizacion-de-relaciones",
     shortDescription: "Cuando una conexión importante se debilita, nuestro equilibrio emocional puede verse afectado.",
-    longDescription: "Ya sea por malentendidos, distancia o conflictos, a veces las palabras no son suficientes para restaurar un vínculo. La armonización de relaciones trabaja a nivel energético y a distancia. Su propósito no es forzar la voluntad de nadie, sino ayudar a limpiar la energía discordante, suavizar resentimientos y fomentar un puente de entendimiento para que la comunicación pueda fluir desde un lugar de mayor paz y amor.\n\n👉 Si sientes en tu corazón el deseo de mejorar ese vínculo, no estás solo/a. Haz clic en el botón de WhatsApp y cuéntame tu historia de forma confidencial.",
+    longDescription: "Ya sea por malentendidos, distancia o conflictos, a veces las palabras no son suficientes para restaurar un vínculo. La armonización de relaciones trabaja a nivel energético y a distancia. Su propósito no es forzar la voluntad de nadie, ya que el libre albedrío es fundamental, sino ayudar a limpiar la energía discordante, suavizar resentimientos y fomentar un puente de entendimiento para que la comunicación pueda fluir desde un lugar de mayor paz y amor.\n\n👉 Si sientes en tu corazón el deseo de mejorar ese vínculo, no estás solo/a. Haz clic en el botón de WhatsApp y cuéntame tu historia de forma confidencial.",
     imageUrl: "/images/servicios/armonizacion-de-relaciones.jpg",
     icon: "Heart",
   },
