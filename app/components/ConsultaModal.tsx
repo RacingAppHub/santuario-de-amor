@@ -59,20 +59,25 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServ
   }, [isOpen]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!isFormValid) {
-      e.preventDefault();
+    e.preventDefault(); // Prevenimos la navegación inmediata
+    if (!isFormValid || !whatsappUrl) {
       return;
     }
 
+    const openWhatsApp = () => {
+        window.open(whatsappUrl, '_blank');
+        onClose();
+    };
+
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', {
-          'send_to': 'AW-18113276034/h3ruCPOcs6YcEILRir1D'
+          'send_to': 'AW-18113276034/h3ruCPOcs6YcEILRir1D',
+          'event_callback': openWhatsApp // <- ¡LA MAGIA!
       });
+    } else {
+        // Si no hay gtag (p.ej. por un ad-blocker), abrimos WhatsApp directamente.
+        openWhatsApp();
     }
-
-    setTimeout(() => {
-      onClose();
-    }, 150);
   };
 
   if (!isOpen) return null;
@@ -119,7 +124,7 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServ
           <div className="flex justify-end gap-4 pt-4">
             <button type="button" onClick={onClose} className="px-6 py-2 rounded-full font-semibold text-gray-300 hover:bg-gray-700 transition">Cancelar</button>
             <a
-              href={whatsappUrl}
+              href={whatsappUrl} // El href sigue ahí como fallback
               onClick={handleLinkClick}
               aria-label={isFormValid ? "Abrir chat de WhatsApp" : "Complete todos los campos para continuar"}
               target="_blank"
