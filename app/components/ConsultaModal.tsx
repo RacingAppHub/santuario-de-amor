@@ -9,6 +9,12 @@ interface ConsultaModalProps {
   nombreServicio: string;
 }
 
+declare global {
+  interface Window {
+    gtag: (type: string, eventName: string, eventParams: object) => void;
+  }
+}
+
 export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServicio }: ConsultaModalProps) {
   const [nombre, setNombre] = useState('');
   const [fechaNacimiento, setFechaNacimiento] = useState('');
@@ -57,6 +63,13 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServ
       e.preventDefault();
       return;
     }
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+          'send_to': 'AW-18113276034/9eL-CMCajaEcEILRir1D'
+      });
+    }
+
     setTimeout(() => {
       onClose();
     }, 150);
