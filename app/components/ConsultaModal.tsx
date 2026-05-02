@@ -66,7 +66,7 @@ export default function ConsultaModal({ isOpen, onClose, phoneNumber, nombreServ
 
     if (typeof window.gtag === 'function') {
       window.gtag('event', 'conversion', {
-          'send_to': 'AW-18113276034/9eL-CMCajaEcEILRir1D'
+          'send_to': 'AW-18113276034/h3ruCPOcs6YcEILRir1D'
       });
     }
 
