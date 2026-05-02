@@ -1,66 +1,61 @@
-'use client';
+"use client";
 
-import { HeartHandshake, Sparkles, KeyRound } from 'lucide-react';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-export default function AcercaDePageClient() {
+const AcercaDePageClient = () => {
   return (
-    <div className="min-h-screen text-gray-200 pt-24 md:pt-32"> 
-      <main className="container mx-auto px-6 pb-20">
-        <div className="max-w-4xl mx-auto flex flex-col gap-12 md:gap-16">
+    <div className="bg-gradient-to-b from-gray-900 via-purple-900 to-black text-white min-h-screen">
+      <main className="container mx-auto px-4 py-16 md:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12 md:mb-20"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+            Mi Misión es Tu Bienestar
+          </h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-300">
+            Más que un servicio, te ofrezco un espacio sagrado para la sanación y el reencuentro con tu propia luz.
+          </p>
+        </motion.div>
 
-          {/* Sección Principal */}
-          <section className="text-center">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-pink-300 mb-6 [text-shadow:0_2px_5px_rgba(236,72,153,0.7)]">
-              Acerca de Santuario de Amor
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
-              Santuario de Amor nació como un espacio seguro y confidencial, dedicado a la guía espiritual y la sanación integral. Creemos firmemente que el amor es la frecuencia más alta y poderosa del universo; no solo el amor de pareja, sino el amor propio, la compasión y la paz que surgen cuando tu energía está alineada. Nuestra intención es ayudarte a reconectar con esa fuerza para que atraigas la abundancia, la tranquilidad y las relaciones sanas que mereces.
-            </p>
-          </section>
-
-          {/* Misión */}
-          <section className="bg-gray-800/20 border border-white/10 rounded-2xl p-8 md:p-10 backdrop-blur-sm">
-            <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-4 text-center [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">Nuestra Misión</h2>
-            <p className="text-md md:text-lg text-gray-200 text-center [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
-              Queremos ser un faro de luz en esos momentos donde la confusión, el dolor o el estancamiento no te dejan ver tu propio brillo. A través de rituales personalizados, limpiezas energéticas a distancia y una guía compasiva, nuestro propósito es entregarte las herramientas exactas para que liberes tus bloqueos, recuperes tu poder personal y tomes el control consciente de tu destino.
-            </p>
-          </section>
-
-          {/* Filosofía */}
-          <section>
-            <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-8 text-center [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">Nuestra Filosofía de Sanación</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center flex flex-col items-center">
-                <HeartHandshake className="w-12 h-12 text-pink-500 mb-4" />
-                <h3 className="font-bold text-xl mb-2 text-white">Empatía sin juicios</h3>
-                <p className="text-gray-200 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">Este es un refugio seguro. Escuchamos tu historia con el corazón abierto y total confidencialidad.</p>
-              </div>
-              <div className="text-center flex flex-col items-center">
-                <Sparkles className="w-12 h-12 text-pink-500 mb-4" />
-                <h3 className="font-bold text-xl mb-2 text-white">Sanación desde la luz</h3>
-                <p className="text-gray-200 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">No trabajamos desde el miedo ni forzamos voluntades; todo nuestro enfoque respeta el libre albedrío y busca tu mayor bien.</p>
-              </div>
-              <div className="text-center flex flex-col items-center">
-                <KeyRound className="w-12 h-12 text-pink-500 mb-4" />
-                <h3 className="font-bold text-xl mb-2 text-white">Empoderamiento interior</h3>
-                <p className="text-gray-200 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">Nuestro mayor éxito no es crear dependencia, sino enseñarte a despertar y utilizar la magia y la fuerza que ya residen en tu interior.</p>
-              </div>
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative w-full h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20"
+          >
+            <Image
+              src="/images/about/bryan-santuario.jpg" // Asegúrate que esta imagen exista
+              alt="Bryan, guía espiritual de Santuario de Amor"
+              layout="fill"
+              objectFit="cover"
+              className="transform hover:scale-105 transition-transform duration-500 ease-in-out"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div className="absolute bottom-4 left-4 text-white">
+              <p className="font-bold text-xl">Bryan</p>
+              <p className="text-sm text-gray-300">Fundador de Santuario de Amor</p>
             </div>
-          </section>
+          </motion.div>
 
-          {/* Guía */}
-          <section className="bg-gray-800/20 border border-white/10 rounded-2xl p-8 md:p-10 mt-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-pink-400 mb-4 text-center [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">Conoce a tu Guía</h2>
-            <div className="text-center">
-              <h3 className="text-xl font-semibold text-white mb-2">¡Hola! Soy el Guía Altair.</h3>
-              <p className="text-md md:text-lg text-gray-200 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)]">
-              Detrás de Santuario de Amor hay un ser humano que también ha transitado por momentos de estancamiento, dudas y bloqueos. Precisamente por eso, mi enfoque no es el de un sabio inalcanzable, sino el de un acompañante en tu proceso. He dedicado mi camino espiritual a formarme en herramientas de sanación profunda —como el tarot evolutivo, las limpiezas energéticas y la numerología— para ponerlas a tu servicio. Mi mayor satisfacción es ver cómo las personas que llegan a mí con el corazón pesado, logran irse con una sonrisa, claridad mental y una energía renovada. Estoy aquí para escucharte y ayudarte a volver a volar.
-              </p>
-            </div>
-          </section>
-
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="prose prose-invert lg:prose-xl max-w-none"
+          >
+            <p className="text-gray-300">
+            Detrás de Santuario de Amor hay un ser humano que también ha transitado por momentos de estancamiento, dudas y bloqueos. Precisamente por eso, mi enfoque no es el de un sabio inalcanzable, sino el de un guía estratégico en tu proceso. He dedicado mi camino espiritual a formarme en herramientas de sanación profunda —como el tarot evolutivo, las limpiezas energéticas y la numerología— para ponerlas a tu servicio. Mi mayor satisfacción es ver cómo las personas que llegan a mí con el corazón pesado, logran irse con una sonrisa, claridad mental y una energía renovada. Estoy aquí para escucharte y ayudarte a volver a volar.
+            </p>
+          </motion.div>
         </div>
       </main>
     </div>
   );
-}
+};
+
+export default AcercaDePageClient;
