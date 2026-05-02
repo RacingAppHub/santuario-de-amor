@@ -7,7 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import ServiceIcon from "@/app/components/ServiceIcon";
 import ConsultaModal from '@/app/components/ConsultaModal';
-import WhatsappIcon from '@/app/components/WhatsappIcon'; // <- IMPORTADO
+import WhatsappIcon from '@/app/components/WhatsappIcon';
+import Disclaimer from '@/app/components/Disclaimer'; // <- IMPORTADO
 
 interface ServicioPageClientProps {
   slug: string;
@@ -39,7 +40,6 @@ export default function ServicioPageClient({ slug }: ServicioPageClientProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
           </div>
 
-          {/* --- NUEVO BOTÓN DE ACCIÓN INMEDIATA --- */}
           <div className="text-center -mt-8 relative z-10">
              <button
                 onClick={() => setModalOpen(true)}
@@ -55,10 +55,13 @@ export default function ServicioPageClient({ slug }: ServicioPageClientProps) {
             <h1 className="text-4xl md:text-5xl font-extrabold text-pink-300 mb-8 [text-shadow:0_2px_5px_rgba(236,72,153,0.7)]">
               {servicio.title}
             </h1>
-            <p className="text-xl text-gray-200 mb-12 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)] text-left md:text-center">
+            <p className="text-xl text-gray-200 mb-12 [text-shadow:0_2px_4px_rgba(0,0,0,0.8)] text-left md:text-center whitespace-pre-line">
               {servicio.longDescription}
             </p>
-            {/* El botón antiguo de aquí se ha eliminado para simplificar */}
+
+            {/* --- DISCLAIMER AÑADIDO --- */}
+            <Disclaimer />
+            
           </div>
         </article>
 
@@ -81,7 +84,6 @@ export default function ServicioPageClient({ slug }: ServicioPageClientProps) {
         </section>
       </main>
       
-      {/* --- NUEVO BOTÓN FLOTANTE DE WHATSAPP --- */}
       <button
         onClick={() => setModalOpen(true)}
         className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 active:scale-95 transition duration-300 z-40 flex items-center"
